@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Para usar la tipografía Myriad original, coloca los archivos en /public/fonts/
+  y descomenta el siguiente bloque:
+
+  @font-face {
+    font-family: 'Myriad Pro';
+    src: url('/fonts/MyriadPro-Light.woff2') format('woff2'),
+         url('/fonts/MyriadPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Myriad Pro';
+    src: url('/fonts/MyriadPro-Regular.woff2') format('woff2'),
+         url('/fonts/MyriadPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Myriad Pro';
+    src: url('/fonts/MyriadPro-Semibold.woff2') format('woff2'),
+         url('/fonts/MyriadPro-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+*/
+
+@layer base {
+  :root {
+    /* Corporate brand colors */
+    /* Primary: #352E87 → HSL(245, 49%, 35%) */
+    /* Secondary: #F26A36 → HSL(17, 88%, 58%) */
+    /* Success: #009639 → HSL(143, 100%, 29%) */
+
+    --background: 0 0% 98%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 245 49% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 245 49% 93%;
+
+    --secondary: 17 88% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    --success: 143 100% 29%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 143 60% 92%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 100% 93%;
+
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 245 49% 93%;
+    --accent-foreground: 245 49% 35%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 245 49% 35%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar: 245 49% 35%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-border: 245 49% 28%;
+    --sidebar-accent: 245 49% 28%;
+    --sidebar-accent-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 94%;
+
+    --card: 240 8% 11%;
+    --card-foreground: 0 0% 94%;
+
+    --popover: 240 8% 13%;
+    --popover-foreground: 0 0% 94%;
+
+    --primary: 245 55% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 245 49% 18%;
+
+    --secondary: 17 88% 62%;
+    --secondary-foreground: 0 0% 100%;
+
+    --success: 143 70% 42%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 143 50% 14%;
+
+    --warning: 38 85% 55%;
+    --warning-foreground: 0 0% 5%;
+    --warning-light: 38 70% 15%;
+
+    --muted: 240 5% 16%;
+    --muted-foreground: 240 4% 60%;
+
+    --accent: 245 49% 18%;
+    --accent-foreground: 245 49% 80%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 18%;
+    --input: 240 5% 18%;
+    --ring: 245 55% 62%;
+
+    /* Sidebar dark */
+    --sidebar: 240 10% 6%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-border: 240 5% 14%;
+    --sidebar-accent: 245 49% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-weight: 300;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 3px;
+  }
+}
